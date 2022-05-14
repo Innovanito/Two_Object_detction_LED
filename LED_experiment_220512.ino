@@ -4,10 +4,13 @@
 #define LED_G 7
 
 #define Sig_1 1
-#define Sig_2 4
+#define Sig_2 3
 
-#define Size_1 40
+#define Size_1 80
 #define Size_2 30
+
+#define delayTime_1 20
+#define delayTime_2 80
 
 Pixy2 pixy;
 
@@ -55,20 +58,16 @@ void loop()
         if (pixy.ccc.blocks[i].m_width > Size_1)
         {
           digitalWrite(LED_G, HIGH);
-          delay(100);
+          delay(delayTime_1);
           digitalWrite(LED_G, LOW);
-          delay(100);
-          digitalWrite(LED_G, HIGH);
-          delay(100);
-          digitalWrite(LED_G, LOW);
-          delay(100);
+          delay(delayTime_1);
         }
         else
         {
           digitalWrite(LED_G, HIGH);
-          delay(200);
+          delay(delayTime_2);
           digitalWrite(LED_G, LOW);
-          delay(200);
+          delay(delayTime_2);
         }
       }
       else if (pixy.ccc.blocks[i].m_signature == Sig_2)
@@ -77,20 +76,16 @@ void loop()
         if (pixy.ccc.blocks[i].m_width > Size_2)
         {
           digitalWrite(LED_R, HIGH);
-          delay(100);
+          delay(delayTime_1);
           digitalWrite(LED_R, LOW);
-          delay(100);
-          digitalWrite(LED_R, HIGH);
-          delay(100);
-          digitalWrite(LED_R, LOW);
-          delay(100);
+          delay(delayTime_1);
         }
         else
         {
           digitalWrite(LED_R, HIGH);
-          delay(200);
+          delay(delayTime_2);
           digitalWrite(LED_R, LOW);
-          delay(200);
+          delay(delayTime_2);
         }
       }
     }
